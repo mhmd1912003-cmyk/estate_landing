@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أڤالون أسيوط الجديدة | مشروع سكني فاخر</title>
+  <meta name="description" content="أڤالون أسيوط الجديدة — شقق عصرية بمساحات متنوعة، تقسيط مرن وموقع مميز.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#101a25; --muted:#66727f; --cream:#f5f1e9; --white:#fff;
+      --gold:#c9a46a; --gold2:#e2c590; --line:rgba(16,26,37,.11);
+      --shadow:0 24px 70px rgba(16,26,37,.13); --radius:28px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Cairo,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.8}
+    a{text-decoration:none;color:inherit} button,input,select{font:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+    .topbar{background:var(--ink);color:#fff;font-size:13px}
+    .topbar .container{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+    header{position:absolute;z-index:20;top:37px;left:0;right:0;color:#fff}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .logo{font-weight:800;font-size:25px;letter-spacing:-1px}
+    .logo span{color:var(--gold2)}
+    .navlinks{display:flex;gap:28px;font-size:14px;font-weight:600}
+    .navlinks a{opacity:.9;transition:.25s}.navlinks a:hover{color:var(--gold2)}
+    .navcta{border:1px solid rgba(255,255,255,.45);padding:9px 17px;border-radius:999px}
+    .hero{min-height:760px;position:relative;color:#fff;display:flex;align-items:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:
+      linear-gradient(90deg,rgba(8,15,22,.82),rgba(8,15,22,.34)),
+      url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85') center/cover}
+    .hero-content{position:relative;z-index:2;width:min(1180px,calc(100% - 40px));margin:auto;padding-top:80px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--gold2);font-size:13px;font-weight:800;letter-spacing:.5px}
+    .dot{width:7px;height:7px;background:var(--gold2);border-radius:50%;box-shadow:0 0 0 6px rgba(226,197,144,.12)}
+    h1{font-size:clamp(44px,6vw,76px);line-height:1.12;letter-spacing:-2px;max-width:800px;margin:18px 0}
+    .hero p{max-width:640px;color:rgba(255,255,255,.83);font-size:18px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{border:0;cursor:pointer;border-radius:13px;padding:13px 23px;font-weight:800;transition:.25s;display:inline-flex;align-items:center;gap:9px}
+    .btn-primary{background:var(--gold2);color:var(--ink)} .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(226,197,144,.2)}
+    .btn-dark{background:rgba(255,255,255,.11);color:#fff;border:1px solid rgba(255,255,255,.25)}
+    .hero-card{position:absolute;bottom:35px;right:50%;transform:translateX(50%);width:min(920px,calc(100% - 40px));background:rgba(255,255,255,.94);color:var(--ink);border-radius:22px;padding:22px 28px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);gap:20px;backdrop-filter:blur(14px)}
+    .stat{border-left:1px solid var(--line);text-align:center}.stat:last-child{border:0}.stat strong{display:block;font-size:23px}.stat span{color:var(--muted);font-size:12px}
+    section{padding:100px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+    .section-head h2{font-size:38px;line-height:1.25;letter-spacing:-1px}.section-head p{color:var(--muted);max-width:520px}
+    .tag{color:#8c6b38;font-weight:800;font-size:12px;display:block;margin-bottom:9px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:.3s}
+    .card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+    .card-img{height:220px;overflow:hidden;position:relative}.card-img img{width:100%;height:100%;object-fit:cover;transition:.5s}.card:hover img{transform:scale(1.05)}
+    .badge{position:absolute;top:15px;right:15px;background:rgba(255,255,255,.9);padding:5px 10px;border-radius:999px;font-size:11px;font-weight:800}
+    .card-body{padding:22px}.card-body h3{font-size:21px}.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin:8px 0 17px}
+    .price{font-size:22px;font-weight:800}.price small{font-size:11px;color:var(--muted);font-weight:500}
+    .features{background:var(--cream)}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.feature{background:#fff;padding:28px 22px;border-radius:22px;border:1px solid var(--line)}.icon{width:48px;height:48px;border-radius:15px;background:#f1e7d6;display:grid;place-items:center;font-size:21px;margin-bottom:17px}.feature h3{font-size:17px;margin-bottom:7px}.feature p{font-size:13px;color:var(--muted)}
+    .gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:12px}.gallery div{overflow:hidden;border-radius:20px;cursor:pointer}.gallery div:first-child{grid-row:span 2}.gallery img{width:100%;height:100%;object-fit:cover;transition:.45s}.gallery div:hover img{transform:scale(1.06)}
+    .plans{display:grid;grid-template-columns:1fr 1fr;gap:24px}.plan{border:1px solid var(--line);padding:30px;border-radius:26px}.plan.active{background:var(--ink);color:#fff}.plan-top{display:flex;justify-content:space-between;align-items:center}.plan-price{font-size:34px;font-weight:800;margin:17px 0}.plan ul{list-style:none;color:var(--muted);font-size:13px}.plan.active ul{color:#dce1e5}.plan li{padding:7px 0;border-bottom:1px solid rgba(127,127,127,.16)}.plan .btn{margin-top:22px}
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{padding:22px;border-top:2px solid var(--gold);background:#fafafa;border-radius:0 0 18px 18px}.step b{font-family:Manrope;font-size:26px;color:var(--gold)}.step h3{margin:8px 0 4px}.step p{font-size:12px;color:var(--muted)}
+    .location{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:30px;overflow:hidden;background:var(--ink);color:#fff}.map{min-height:430px;background:linear-gradient(rgba(13,24,34,.1),rgba(13,24,34,.25)),url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80') center/cover}.location-info{padding:55px}.location-info p{color:#bfc8cf}.location-list{list-style:none;margin-top:20px}.location-list li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+    .testimonials{background:#f8f8f7}.quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.quote{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px}.stars{color:#b88b45;letter-spacing:2px}.quote p{font-size:14px;margin:15px 0;color:#4f5b65}.person{font-size:12px;font-weight:800}
+    .faq{max-width:850px;margin:auto}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;background:none;border:0;text-align:right;padding:20px 0;cursor:pointer;font-weight:800;display:flex;justify-content:space-between}.faq-a{display:none;color:var(--muted);font-size:14px;padding:0 0 20px}.faq-item.open .faq-a{display:block}.faq-item.open .plus{transform:rotate(45deg)}
+    .contact{background:var(--cream)}.contact-box{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;background:#fff;border-radius:30px;padding:35px;box-shadow:var(--shadow)}.contact-copy{padding:20px}.contact-copy p{color:var(--muted);margin:12px 0 25px}.contact-points{list-style:none;color:#48545e;font-size:13px}.contact-points li{margin:10px 0}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form input,.form select,.form textarea{width:100%;border:1px solid var(--line);padding:13px 14px;border-radius:12px;outline:0;background:#fff}.form textarea{grid-column:1/-1;min-height:110px;resize:vertical}.form .full{grid-column:1/-1}
+    footer{background:var(--ink);color:#fff;padding:35px 0}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-row p{color:#aeb8bf;font-size:12px}
+    .float-wa{position:fixed;z-index:50;left:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:25px;box-shadow:0 12px 30px rgba(0,0,0,.2);animation:pulse 2.3s infinite}.toast{position:fixed;left:22px;bottom:92px;background:var(--ink);color:#fff;padding:10px 15px;border-radius:12px;font-size:12px;opacity:0;pointer-events:none;transition:.3s}.toast.show{opacity:1}
+    .reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.visible{opacity:1;transform:none}
+    @keyframes pulse{50%{box-shadow:0 12px 30px rgba(0,0,0,.2),0 0 0 10px rgba(37,211,102,.08)}}
+    @media(max-width:900px){.navlinks{display:none}.hero-card{grid-template-columns:repeat(2,1fr)}.cards,.quote-grid{grid-template-columns:1fr 1fr}.feature-grid{grid-template-columns:1fr 1fr}.plans,.location,.contact-box{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}}
+    @media(max-width:620px){section{padding:70px 0}.container{width:min(100% - 28px,1180px)}.topbar{display:none}header{top:0}.hero{min-height:730px}.hero-content{padding-top:80px}h1{font-size:43px}.hero p{font-size:15px}.hero-card{bottom:18px;gap:8px;padding:15px}.stat strong{font-size:18px}.stat span{font-size:10px}.section-head{display:block}.section-head h2{font-size:30px;margin-bottom:10px}.cards,.quote-grid,.feature-grid,.timeline{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:170px 170px 170px}.gallery div:first-child{grid-row:span 2}.form{grid-template-columns:1fr}.form textarea,.form .full{grid-column:auto}.contact-box{padding:20px}.location-info{padding:35px}.footer-row{display:block}.footer-row p{margin-top:10px}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>مشروع سكني متكامل في أسيوط الجديدة</span><span>للاستفسار: 0100 123 4567</span></div></div>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#">أڤالون<span>.</span></a>
+      <div class="navlinks">
+        <a href="#about">عن المشروع</a><a href="#units">الوحدات</a><a href="#features">المميزات</a><a href="#location">الموقع</a><a href="#faq">الأسئلة</a>
+      </div>
+      <a class="navcta" href="#contact">احجز معاينة</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <span class="eyebrow"><i class="dot"></i> مشروع سكني جديد • أسيوط الجديدة</span>
+        <h1>بيتك القادم<br>يبدأ من هنا.</h1>
+        <p>مساحات مدروسة، تشطيبات راقية، وموقع قريب من أهم المحاور والخدمات — في مجتمع سكني صُمم ليكون مكانًا تعيش فيه، وليس مجرد عنوان.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#units">استكشف الوحدات ↓</a>
+          <a class="btn btn-dark" href="https://wa.me/201094918310?text=مرحباً، أريد معرفة تفاصيل مشروع أڤالون" target="_blank">تواصل عبر WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="stat"><strong>1.85M</strong><span>تبدأ الأسعار من</span></div>
+        <div class="stat"><strong>82–210 م²</strong><span>مساحات متنوعة</span></div>
+        <div class="stat"><strong>8 دقائق</strong><span>من الجامعة</span></div>
+        <div class="stat"><strong>2028</strong><span>موعد التسليم المتوقع</span></div>
+      </div>
+    </section>
+
+    <section id="about" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="tag">01 — الفكرة</span><h2>أكثر من شقة.<br>أسلوب حياة متكامل.</h2></div>
+          <p>أڤالون يجمع بين الخصوصية، المساحات الخضراء، الخدمات اليومية، والتصميم المعاصر في موقع استراتيجي بمدينة أسيوط الجديدة.</p>
+        </div>
+        <div class="gallery">
+          <div><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"></div>
+          <div><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=85"></div>
+          <div><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85"></div>
+          <div><img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=800&q=85"></div>
+          <div><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=85"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="units" class="reveal">
+      <div class="container">
+        <div class="section-head"><div><span class="tag">02 — الوحدات</span><h2>اختار المساحة<br>التي تناسبك.</h2></div><p>نماذج مختلفة للعائلات الصغيرة والكبيرة، مع توزيع عملي ومساحات معيشة مريحة.</p></div>
+        <div class="cards">
+          <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85"><span class="badge">الأكثر طلبًا</span></div><div class="card-body"><h3>شقة غرفتين</h3><div class="meta"><span>2 غرف • 2 حمام</span><span>الدور 3–7</span></div><div class="price">1,850,000 <small>جنيه</small></div></div></article>
+          <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1600566753051-5d3a5c3d7d7a?auto=format&fit=crop&w=1000&q=85"><span class="badge">اختيار العائلات</span></div><div class="card-body"><h3>شقة 3 غرف</h3><div class="meta"><span>3 غرف • 2 حمام</span><span>الدور 2–8</span></div><div class="price">2,420,000 <small>جنيه</small></div></div></article>
+          <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"><span class="badge">Premium</span></div><div class="card-body"><h3>بنتهاوس</h3><div class="meta"><span>4 غرف • 3 حمام</span><span>روف خاص</span></div><div class="price">4,750,000 <small>جنيه</small></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features reveal">
+      <div class="container">
+        <div class="section-head"><div><span class="tag">03 — المميزات</span><h2>كل التفاصيل<br>التي تفرق.</h2></div><p>تفاصيل صغيرة، لكنها تصنع فرقًا كبيرًا في تجربة السكن اليومية.</p></div>
+        <div class="feature-grid">
+          <div class="feature"><div class="icon">⌂</div><h3>تصميم معماري عصري</h3><p>واجهات أنيقة وتوزيع داخلي عملي يستفيد من كل متر.</p></div>
+          <div class="feature"><div class="icon">✦</div><h3>مساحات خضراء</h3><p>حدائق ومناطق جلوس تمنح المشروع طابعًا هادئًا ومفتوحًا.</p></div>
+          <div class="feature"><div class="icon">◉</div><h3>أمن على مدار الساعة</h3><p>بوابات ذكية وكاميرات مراقبة وحراسة 24/7.</p></div>
+          <div class="feature"><div class="icon">⚡</div><h3>خدمات متكاملة</h3><p>مواقف، منطقة أطفال، مصاعد، وصيانة للمناطق المشتركة.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="container">
+        <div class="section-head"><div><span class="tag">04 — أنظمة السداد</span><h2>خطط دفع<br>بمرونة أكبر.</h2></div><p>بيانات تجريبية قابلة للتعديل حسب المشروع والعرض الحقيقي.</p></div>
+        <div class="plans">
+          <div class="plan active"><div class="plan-top"><b>خطة Smart</b><span>الأكثر طلبًا</span></div><div class="plan-price">10% مقدم</div><ul><li>تقسيط حتى 8 سنوات</li><li>بدون فوائد بنكية</li><li>دفعة استلام 5%</li><li>باقي المبلغ على أقساط ربع سنوية</li></ul><a class="btn btn-primary" href="#contact">اطلب تفاصيل الخطة</a></div>
+          <div class="plan"><div class="plan-top"><b>خطة Flex</b><span>مرونة أعلى</span></div><div class="plan-price">20% مقدم</div><ul><li>تقسيط حتى 6 سنوات</li><li>خصم إضافي حسب الوحدة</li><li>دفعة استلام 5%</li><li>أقساط نصف سنوية</li></ul><a class="btn btn-dark" style="background:var(--ink)" href="#contact">اطلب تفاصيل الخطة</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" style="padding-top:0">
+      <div class="container">
+        <div class="section-head"><div><span class="tag">05 — رحلة الحجز</span><h2>من أول رسالة<br>لحد استلام المفتاح.</h2></div></div>
+        <div class="timeline">
+          <div class="step"><b>01</b><h3>استفسار</h3><p>تواصل معنا وحدد احتياجك وميزانيتك.</p></div>
+          <div class="step"><b>02</b><h3>معاينة</h3><p>جولة في المشروع واختيار الوحدة المناسبة.</p></div>
+          <div class="step"><b>03</b><h3>حجز</h3><p>تثبيت الوحدة واختيار نظام السداد.</p></div>
+          <div class="step"><b>04</b><h3>استلام</h3><p>استلام وحدتك في الموعد المحدد.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="location" class="reveal">
+      <div class="container">
+        <div class="location">
+          <div class="map"></div>
+          <div class="location-info"><span class="tag">06 — الموقع</span><h2>كل شيء قريب منك.</h2><p>الموقع التجريبي: منطقة الامتداد العمراني، أسيوط الجديدة.</p>
+            <ul class="location-list"><li>📍 5 دقائق — جامعة أسيوط الجديدة</li><li>🛒 4 دقائق — منطقة الخدمات والمولات</li><li>🏥 7 دقائق — أقرب مستشفى</li><li>🚗 12 دقيقة — طريق القاهرة / أسيوط</li></ul>
+            <a class="btn btn-primary" style="margin-top:22px" href="https://maps.google.com/?q=Assiut+New+City" target="_blank">فتح الموقع على الخريطة ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials reveal">
+      <div class="container"><div class="section-head"><div><span class="tag">07 — آراء العملاء</span><h2>تجارب من<br>عملائنا.</h2></div></div>
+        <div class="quote-grid">
+          <div class="quote"><div class="stars">★★★★★</div><p>“التصميم مختلف فعلًا، وأكتر حاجة عجبتني إن كل الخدمات قريبة من البيت.”</p><div class="person">أحمد م. — عميل حجز وحدة 3 غرف</div></div>
+          <div class="quote"><div class="stars">★★★★★</div><p>“فريق المبيعات شرح لي كل أنظمة السداد بشكل واضح وساعدني أختار المساحة المناسبة.”</p><div class="person">سارة ع. — عميلة</div></div>
+          <div class="quote"><div class="stars">★★★★★</div><p>“الموقع كان أهم حاجة بالنسبة لي، وبعد المعاينة حسيت إن المشروع مناسب للعائلة.”</p><div class="person">محمد ر. — عميل</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="reveal">
+      <div class="container"><div class="section-head"><div><span class="tag">08 — FAQ</span><h2>أسئلة<br>بتتكرر.</h2></div><p>اضغط على السؤال لعرض الإجابة.</p></div>
+        <div class="faq">
+          <div class="faq-item"><button class="faq-q">هل الأسعار تشمل التشطيب؟ <span class="plus">＋</span></button><div class="faq-a">نعم، الأسعار المعروضة هنا لنسخة تجريبية من المشروع وتشمل تشطيبًا كاملًا حسب مواصفات الوحدة.</div></div>
+          <div class="faq-item"><button class="faq-q">هل يوجد تقسيط؟ <span class="plus">＋</span></button><div class="faq-a">يوجد أكثر من نظام سداد تجريبي، ويمكن تعديل النسب والسنوات والدفعات من بيانات المشروع الحقيقية.</div></div>
+          <div class="faq-item"><button class="faq-q">هل يمكن اختيار الدور والواجهة؟ <span class="plus">＋</span></button><div class="faq-a">نعم، حسب الوحدات المتاحة وقت الحجز. يمكن إضافة مخطط تفاعلي للأدوار والوحدات في النسخة النهائية.</div></div>
+          <div class="faq-item"><button class="faq-q">كيف أحجز معاينة؟ <span class="plus">＋</span></button><div class="faq-a">اضغط على زر WhatsApp أو املأ نموذج التواصل، وسيتم تحديد الموعد المناسب مع فريق المبيعات.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact reveal">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-copy"><span class="tag">09 — تواصل</span><h2>جاهز تشوف<br>بيتك بنفسك؟</h2><p>اترك بياناتك وسيتواصل معك مستشار عقاري لمساعدتك في معرفة الوحدات المتاحة والأسعار الحالية.</p><ul class="contact-points"><li>✓ معاينة مجانية</li><li>✓ مقارنة بين المساحات</li><li>✓ شرح أنظمة السداد</li><li>✓ الرد خلال دقائق في أوقات العمل</li></ul></div>
+          <form class="form" onsubmit="submitForm(event)">
+            <input required placeholder="الاسم بالكامل"><input required placeholder="رقم الهاتف" type="tel">
+            <select><option>اختر نوع الوحدة</option><option>غرفتين</option><option>3 غرف</option><option>بنتهاوس</option></select>
+            <select><option>الميزانية التقريبية</option><option>1.5 – 2.5 مليون</option><option>2.5 – 4 مليون</option><option>أكثر من 4 مليون</option></select>
+            <textarea placeholder="اكتب أي تفاصيل إضافية..."></textarea>
+            <button class="btn btn-primary full" type="submit">إرسال طلب المعاينة →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-row"><div class="logo">أڤالون<span>.</span></div><p>© 2026 Avalon — جميع البيانات والصور في هذه النسخة تجريبية وقابلة للتعديل.</p></div></footer>
+  <a class="float-wa" href="https://wa.me/201094918310?text=مرحباً، أريد معرفة تفاصيل مشروع أڤالون" target="_blank" aria-label="WhatsApp">واتس</a>
+  <div class="toast" id="toast">تم استلام طلبك التجريبي ✓</div>
+  <script>
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+    document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+    function submitForm(e){e.preventDefault();const t=document.getElementById('toast');t.classList.add('show');e.target.reset();setTimeout(()=>t.classList.remove('show'),3200)}
+  </script>
+</body>
+</html>
